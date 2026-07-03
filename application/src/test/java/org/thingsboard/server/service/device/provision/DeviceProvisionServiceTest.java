@@ -21,6 +21,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;
 import org.springframework.test.context.ContextConfiguration;
@@ -73,12 +75,12 @@ import static org.mockito.Mockito.when;
 
 @Slf4j
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = DeviceProvisionServiceTest.ContextConfiguration.class)
+@ContextConfiguration(classes = DeviceProvisionServiceTest.TestConfig.class)
 public class DeviceProvisionServiceTest {
 
-    @org.springframework.context.annotation.Configuration
-    static class ContextConfiguration {
-        @org.springframework.context.annotation.Bean
+    @Configuration
+    static class TestConfig {
+        @Bean
         public DeviceProvisionServiceImpl deviceProvisionService(TbQueueProducerProvider producerProvider,
                                                                  DeviceProfileService deviceProfileService,
                                                                  DeviceService deviceService,

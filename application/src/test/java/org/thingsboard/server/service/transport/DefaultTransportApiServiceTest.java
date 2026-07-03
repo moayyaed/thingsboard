@@ -20,6 +20,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;
 import org.springframework.test.context.ContextConfiguration;
@@ -69,12 +71,12 @@ import static org.mockito.Mockito.when;
 
 @Slf4j
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = DefaultTransportApiServiceTest.ContextConfiguration.class)
+@ContextConfiguration(classes = DefaultTransportApiServiceTest.TestConfig.class)
 public class DefaultTransportApiServiceTest {
 
-    @org.springframework.context.annotation.Configuration
-    static class ContextConfiguration {
-        @org.springframework.context.annotation.Bean
+    @Configuration
+    static class TestConfig {
+        @Bean
         public DefaultTransportApiService defaultTransportApiService(TbDeviceProfileCache deviceProfileCache,
                                                                      TbTenantProfileCache tenantProfileCache,
                                                                      TbApiUsageStateService apiUsageStateService,
