@@ -19,7 +19,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class GatewaySessionLimits extends SessionLimits {
 
     private SessionRateLimits gatewayRateLimits;

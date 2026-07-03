@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  * Created by ashvayka on 19.01.18.
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class TbGpsGeofencingActionNodeConfiguration extends TbGpsGeofencingFilterNodeConfiguration {
 
     private int minInsideDuration;

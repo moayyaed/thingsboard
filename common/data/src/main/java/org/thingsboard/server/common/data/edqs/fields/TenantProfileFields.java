@@ -24,7 +24,7 @@ import org.thingsboard.server.common.data.id.TenantId;
 import java.util.UUID;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @SuperBuilder
 public class TenantProfileFields extends AbstractEntityFields {

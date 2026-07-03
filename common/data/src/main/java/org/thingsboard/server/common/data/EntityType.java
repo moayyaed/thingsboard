@@ -81,7 +81,7 @@ public enum EntityType {
     @Getter
     private final String tableName;
     @Getter
-    private final String normalName = StringUtils.capitalize(Strings.CS.removeStart(name(), "TB_")
+    private final String normalName = StringUtils.capitalize(removeStart(name(), "TB_")
             .toLowerCase().replaceAll("_", " "));
 
     public static final List<String> NORMAL_NAMES = EnumSet.allOf(EntityType.class).stream()

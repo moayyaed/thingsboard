@@ -27,7 +27,7 @@ import org.thingsboard.server.common.data.id.TenantId;
  * @author Andrew Shvayka
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @Schema
 public class EventInfo extends BaseData<EventId> {
 

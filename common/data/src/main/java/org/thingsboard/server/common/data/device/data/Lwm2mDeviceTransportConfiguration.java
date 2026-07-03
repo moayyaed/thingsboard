@@ -28,7 +28,7 @@ import java.util.Map;
 
 @Schema
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class Lwm2mDeviceTransportConfiguration extends PowerSavingConfiguration implements DeviceTransportConfiguration {
 
     @JsonIgnore

@@ -21,7 +21,7 @@ import lombok.EqualsAndHashCode;
 
 @Schema
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class HomeDashboard extends Dashboard {
 
     public static final String HIDE_DASHBOARD_TOOLBAR_DESCRIPTION = "Hide dashboard toolbar flag. Useful for rendering dashboards on mobile.";

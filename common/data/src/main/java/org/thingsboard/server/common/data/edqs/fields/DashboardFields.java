@@ -29,7 +29,7 @@ import java.util.UUID;
 
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @SuperBuilder
 public class DashboardFields extends AbstractEntityFields {

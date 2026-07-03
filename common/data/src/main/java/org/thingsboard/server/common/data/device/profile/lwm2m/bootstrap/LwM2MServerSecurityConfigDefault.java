@@ -21,7 +21,7 @@ import lombok.EqualsAndHashCode;
 
 @Schema
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class LwM2MServerSecurityConfigDefault extends LwM2MServerSecurityConfig {
     @Schema(description = "Host for 'Security' mode (DTLS)", example = "0.0.0.0", accessMode = Schema.AccessMode.READ_ONLY)
     protected String securityHost;
