@@ -19,7 +19,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class BaseDeleteTsKvQuery extends BaseTsKvQuery implements DeleteTsKvQuery {
 
     private final Boolean rewriteLatestIfDeleted;

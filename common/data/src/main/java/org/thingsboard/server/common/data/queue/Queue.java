@@ -31,7 +31,7 @@ import org.thingsboard.server.common.data.validation.NoXss;
 import java.util.Optional;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class Queue extends BaseDataWithAdditionalInfo<QueueId> implements HasName, HasTenantId, QueueConfig {
     private TenantId tenantId;
     @NoXss

@@ -23,7 +23,7 @@ import lombok.experimental.SuperBuilder;
 import java.util.UUID;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @SuperBuilder
 public class QueueStatsFields extends AbstractEntityFields {

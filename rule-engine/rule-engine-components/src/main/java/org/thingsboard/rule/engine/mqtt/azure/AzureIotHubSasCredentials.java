@@ -30,7 +30,7 @@ import org.thingsboard.rule.engine.credentials.CredentialsType;
 import java.security.Security;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @Slf4j
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AzureIotHubSasCredentials extends CertPemCredentials {

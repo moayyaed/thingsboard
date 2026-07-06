@@ -17,6 +17,7 @@ package org.thingsboard.server.service.queue;
 
 import com.google.common.collect.Sets;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -115,7 +116,7 @@ public class DefaultTbClusterServiceTest {
     @MockitoSpyBean
     protected TbClusterService clusterService;
 
-    @org.junit.Before
+    @Before
     public void setUp() {
         lenient().when(topicService.getNotificationsTopic(any(), any())).thenAnswer(invocation -> {
             ServiceType serviceType = invocation.getArgument(0);

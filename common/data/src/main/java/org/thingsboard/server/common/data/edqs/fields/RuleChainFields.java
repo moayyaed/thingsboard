@@ -26,7 +26,7 @@ import java.util.UUID;
 import static org.thingsboard.server.common.data.edqs.fields.FieldsUtil.getText;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @SuperBuilder
 public class RuleChainFields extends AbstractEntityFields {

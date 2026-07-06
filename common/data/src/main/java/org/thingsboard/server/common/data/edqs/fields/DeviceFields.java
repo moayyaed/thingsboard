@@ -27,7 +27,7 @@ import java.util.UUID;
 import static org.thingsboard.server.common.data.edqs.fields.FieldsUtil.getText;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @SuperBuilder
 public class DeviceFields extends AbstractEntityFields implements ProfileAwareFields {

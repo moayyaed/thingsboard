@@ -22,7 +22,7 @@ import org.thingsboard.server.common.data.id.TenantId;
 
 @Schema
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class TenantInfo extends Tenant {
     @Schema(description = "Tenant Profile name", example = "Default")
     private String tenantProfileName;

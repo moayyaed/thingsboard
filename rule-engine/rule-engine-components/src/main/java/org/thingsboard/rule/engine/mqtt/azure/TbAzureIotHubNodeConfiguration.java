@@ -21,7 +21,7 @@ import lombok.EqualsAndHashCode;
 import org.thingsboard.rule.engine.mqtt.TbMqttNodeConfiguration;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class TbAzureIotHubNodeConfiguration extends TbMqttNodeConfiguration {
 
     @Override

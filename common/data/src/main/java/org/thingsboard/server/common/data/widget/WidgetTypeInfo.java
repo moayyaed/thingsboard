@@ -27,7 +27,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class WidgetTypeInfo extends BaseWidgetType {
 
     @Serial

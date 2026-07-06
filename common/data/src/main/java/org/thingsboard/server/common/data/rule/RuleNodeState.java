@@ -23,7 +23,7 @@ import org.thingsboard.server.common.data.id.RuleNodeId;
 import org.thingsboard.server.common.data.id.RuleNodeStateId;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class RuleNodeState extends BaseData<RuleNodeStateId> {
 
     private RuleNodeId ruleNodeId;

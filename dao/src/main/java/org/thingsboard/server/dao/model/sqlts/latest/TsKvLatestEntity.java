@@ -36,7 +36,7 @@ import java.util.UUID;
 import static org.thingsboard.server.dao.model.ModelConstants.VERSION_COLUMN;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "ts_kv_latest")
 @IdClass(TsKvLatestCompositeKey.class)
