@@ -179,28 +179,28 @@ class LtsMigrationServiceTest {
         LtsVersion from = LtsVersion.parse("4.3.1.1");
         LtsVersion to = LtsVersion.parse("4.3.1.3");
         // within-family in range
-        assertTrue(LtsMigrationService.isInRange(LtsVersion.parse("4.3.1.2"), from, to));
+        assertTrue(LtsVersion.parse("4.3.1.2").isInRange(from, to));
         // the target itself (upper boundary, inclusive)
-        assertTrue(LtsMigrationService.isInRange(to, from, to));
+        assertTrue(to.isInRange(from, to));
         // at from (lower boundary, exclusive)
-        assertFalse(LtsMigrationService.isInRange(from, from, to));
+        assertFalse(from.isInRange(from, to));
         // below from
-        assertFalse(LtsMigrationService.isInRange(LtsVersion.parse("4.3.1.0"), from, to));
+        assertFalse(LtsVersion.parse("4.3.1.0").isInRange(from, to));
         // above to
-        assertFalse(LtsMigrationService.isInRange(LtsVersion.parse("4.3.1.4"), from, to));
+        assertFalse(LtsVersion.parse("4.3.1.4").isInRange(from, to));
 
         // Cross-family: an in-range older-family bean IS now selected (the whole point of the loosened filter),
         // as is the target-family baseline; only a bean below `from` stays out of range.
         LtsVersion crossFrom = LtsVersion.parse("4.3.0.0");
         LtsVersion crossTo = LtsVersion.parse("4.4.0.0");
-        assertTrue(LtsMigrationService.isInRange(LtsVersion.parse("4.3.1.3"), crossFrom, crossTo));
-        assertTrue(LtsMigrationService.isInRange(crossTo, crossFrom, crossTo));
-        assertFalse(LtsMigrationService.isInRange(LtsVersion.parse("4.2.2.3"), crossFrom, crossTo));
+        assertTrue(LtsVersion.parse("4.3.1.3").isInRange(crossFrom, crossTo));
+        assertTrue(crossTo.isInRange(crossFrom, crossTo));
+        assertFalse(LtsVersion.parse("4.2.2.3").isInRange(crossFrom, crossTo));
     }
 
     @Test
     void reproductionDuplicateBeanSitsBelowSupportedSourceFloor() {
-        // Load-bearing invariant (see LtsMigrationService.isInRange): the only reproduction-duplicate pair is
+        // Load-bearing invariant (see LtsMigrationService.select): the only reproduction-duplicate pair is
         // 4.2.2.3 <-> 4.3.1.3 (both do the solution-template / widget-bundle work). For the loosened (from, to]
         // filter to never select both in a single supported upgrade, the duplicate 4.2.2.3 must sit strictly
         // below the minimum supported upgrade source. That floor is 4.3.0.0 (SUPPORTED_VERSIONS_FOR_UPGRADE).
@@ -208,7 +208,7 @@ class LtsMigrationServiceTest {
         LtsVersion supportedSourceFloor = LtsVersion.parse("4.3.0.0");
         assertTrue(duplicate.compareTo(supportedSourceFloor) < 0);
         // So on any supported cross-family upgrade (from >= floor), the duplicate is out of range.
-        assertFalse(LtsMigrationService.isInRange(duplicate, supportedSourceFloor, LtsVersion.parse("4.4.0.0")));
+        assertFalse(duplicate.isInRange(supportedSourceFloor, LtsVersion.parse("4.4.0.0")));
     }
 
     @Test
